@@ -1,0 +1,9 @@
+TL494 "traditional" BJT version - like ATX SMPS
+
+This one is just a plain copying of ATX SMPS design, removing all unneeded voltages. This is same as 494_labsupply there except it's a half bridge.
+
+I have many high voltage BJTs like MJE13009 to play with. I probably try to build this one first. I also tested full bridge version just by adding another pair at right and removing center tap. It worked in simulation, although there are no ready to use parts like current drive transformer (so you have to make one yourself).
+
+I will probably refine this circuit early, and add UC384x standby supply in place.
+
+*** This circuit is a draft. It was not tested in reality. ***
