@@ -1,0 +1,64 @@
+TL494 with IR2110 low voltage full bridge step-up 36VDC (27-44VDC) to 350VDC 8A 2500W power supply,
+with over-, undervoltage protections, current limit of secondary (which will stop the supply once triggered), soft start function, 0.9 duty cycle, hard voltage monitoring, output overvoltage protection, hard MOSFET driving and latch prevention. Supply for onboard circuitry is provided by TL494 flyback step-down converter. The whole circuit shares one common ground.
+
+This is my future project. I am going to use the best parts for it available today, and I am going to build the same but very small version (300-500W) with traditional parts for testing and replacing with it my old push-pull supply.
+
+The simulation file is actually can be simulated, but very slowly. Because there are actually two SMPS on board with many inductors and transformers. The simulation file is well commented.
+
+Input:
+
+- Battery of 50V capacitors (I hope)
+
+Standby supply:
+
+- runs from 27 to 44VDC, monitors for possible over- and undervoltages at input
+- provides stable 16VDC supply for onboard circuitry as well as for fans (maybe it will be two voltage version with 12VDC for fans).
+
+Generator stage:
+
+- Generates square wave pulses based output voltage monitoring
+- Sharp edge of output voltage versus time
+- Soft start stage limits hard load on bridge because there is no output inductor installed
+- Equipped with protection against overcurrent on secondary side, which temporarily is turned off during startup
+- Emits hard signals for drivers with signal transistors configured in totem-pole stage
+
+Driver stage:
+
+- Two IR2110 driver ICs allow for quick recharging of weightful power MOSFETs
+- Each channel contains quick discharge PNP transistor circuit
+- To protect circuit from Miller effect, an Rgs resistor is installed
+- Uses 40V 1A shottky diodes
+- Suitable for more than one heavy (Cin ~= 10nF) MOSFET in parallel
+
+Output stage:
+
+- Monitoring current is effective on secondary
+- 8A Ultrafast diodes on heatsinks
+- Two 470uF x 400V capacitor bank with shunt film 470nF or 1uF (or many of them)
+- Overvoltage shutdown circuit at 400V by raising DTC high (if something goes wrong)
+
+Design:
+
+The circuit is NOT isolated type, and in fact, cannot be. Because if we want to monitor 350VDC with optocouple, this means that device that will limit current for optocouple led even at 3mA current will dissipate a 1W - wasted. And output voltage will be jumpy. There maybe situations when led current will be as high as 10mA - 3.5W wasted. So I am not going this way with step-up circuits.
+
+This circuit is designed in the way it can be reused with any input voltage in range of 12-120VDC at least. Each voltage selected will require redesign of input standby supply, reselection of power MOSFETs to be used in bridge, redesign of power transformer to be used. All that data can be obtained easily as well as you have at least datasheets for your fets and transformer cores, or at least you have an LCR meter. Just use ferritran and flyback programs from my etech (http://lynxlynx.tk/cgit/cgit.cgi/etech/, git://lynxlynx.tk/etech/) repository and you will get values for your design quickly.
+
+Happily, at low side no one needs protection. There are no sensitive devices connected. There are only batteries (and for solar projects, solar panels connected through shottky diode). Batteries will quickly absorb any high voltage spikes before input fuse will trigger even if current protection will fail. So unless you run your PC directly from 12/24/36V you're safe. Better to run it off 350VDC link.
+
+Even if we will install a battery of film capacitors along with main polar aluminum ones, there will be still small voltage spikes at output. They are hope to be filtered with small RC filter for error amplifier, but this does not mean they will be filtered at output. Because these spikes (or jumps) are small enough compared to main voltage, it's safe just to ignore them. One can lower output voltage slightly to avoid that they can overjump any safe values (the simulation shows 8V jump, but this is only with one 470nF film cap).
+
+WARNING!
+
+*** This circuit is a draft. It was not tested in reality. ***
+
+This means that I did not even built it, and this is only (long progressing) draft and a pile of plans. No, even PCB was not drafted.
+
+The circuit idea is almost complete, I expect it to be 95% ready. It's still opaque to me how to properly monitor voltage with TL494. I am going to build some small circuits before I will return to this. I am going to build a small scale version of this circuit first, as well as it's standby supply and some boost circuits.
+
+Many parts for it are already there. I expect to build it fully in next year. When it will be ready, I will post a complete build instructions, it's characteristics and pitfalls I encountered, as well as calculations for it's key items like transformers.
+
+This one also can be a subject to frequent changes.
+
+In any case, DO NOT attempt to build this one now! I cannot guarantee that it will work.
+
+This draft is in public domain. You can take ideas from there freely, without any charge.
