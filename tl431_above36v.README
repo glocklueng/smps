@@ -1,0 +1,3 @@
+This is one of ways to operate TL431 voltage sensor when voltage to be monitored is more than 36V (an absolute maximum for TL431). Another way is to use isolated step-down DC-DC converter or having additional transformer coil. Combined with optocoupler which takes just 2mA, BD139 transistors will not become too hot during operation.
+
+*** This circuit is a draft. It was not tested in reality. ***
