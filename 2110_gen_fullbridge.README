@@ -1,0 +1,6 @@
+Not so ideal full bridge circuit layout with jumpers. I wired it with 494_test_generator and got
+a good testing circuit for power devices like ferrite transformers and testing inductors.
+
+You'll probably want to install a filter capacitor network at center power tracks just before mosfets. I recommend high values there for electrolytic and at least 1uF for ceramic one. Without them there will be ringing and spikes with amplitudes higher than supply voltage and this can kill your fets.
+
+For max. 44V input voltage IRF3205 are enough and fine. For higher voltages tracks must be thinner and have good spacing.
