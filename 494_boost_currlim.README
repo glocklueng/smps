@@ -1,0 +1,10 @@
+TL494 booster - monitor voltage AND current at the same time.
+
+This is a lame booster I made in software at some day. It is intended to drive a large powerful 30V 20W high voltage LED which sits on a big heatsink and still heats up to 70°C! Because many PWM circuits ordered from China are only voltage monitoring devices and do not monitor current, this one is to help.
+
+- If the current is less than 500mA, it will keep 30V steady voltage
+- If load sinks more than 500mA, the voltage monitoring is off, and current is monitored constantly at 500mA level.
+
+I probably will build this second right after my 494 small step-up for my oscilloscope.
+
+*** This circuit is a draft. It was not tested in reality. ***
