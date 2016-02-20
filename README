@@ -1,0 +1,28 @@
+smps - my switch mode power supply schematics, simulations and drafts for future projects.
+
+This repository contains already implemented things and my future designs that are drafted.
+I put these schematics into public domain so anyone can reuse them and build the big good things
+that will power their homes, worksites and many many places which require stable good power supplies.
+There mostly a step-up things (i.e. power projects which convert battery supply voltage into usable
+high voltage), but some are step-down power supplies.
+
+Schematics here are usually simulations that should be run from LTSpice. Some virtual parts are
+to be obtained elsewhere, because I have no rights to redistribute them in this repository.
+
+The parts you can obtain are from:
+
+* http://valvolodin.narod.ru/models.html - archives ValVol.zip, parts of Standard.zip, spice.zip, extra.rar, extra_n.rar.
+* I hope to continue this list...
+
+*** WARNING! *** Strict repeating of circuit may or MAY NOT lead you to a working unit. Author is NOT responsible for any misuse of provided data. Where possible there will be a "confirmed working" PCB image included (especially for finished projects). If you will repeat it EXACTLY, only then I can help you to debug your issue.
+
+If you experience trouble building supply and have repeated my circuit, be prepared to have following equipment:
+
+* A multimeter, of course. Chinese small DT830 type is enough if it accurate.
+* An oscilloscope of enough bandwidth (10MHz and higher), analog or digital
+* An LC(R) meter. It's required for measuring inductances accurately. An additional accurate R meter is required if you're using low ohm shunts as a current sensors.
+* For high voltages it's good to have a neon phase detector.
+
+Then you can start a conversation with me by mailing me. You can find out my email address by visiting the page: http://lynxlynx.tk/contact/. Please prepend the Subject: line with "[smps]" (without quotes).
+
+-- Lynx, Feb2016.
