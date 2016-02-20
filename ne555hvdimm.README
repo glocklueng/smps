@@ -1,0 +1,19 @@
+ne555hvdimm - high voltage low frequency simple dimmer circuit.
+
+It consists of two parts: a standby 15V supply and timing NE555 circuit which recharges power MOSFET to turn on and off the load. Mine works at ~180Hz frequency.
+
+This circuit can "regulate" a 350VDC supply from about 20V to 340V. Because NE555 cannot go into "full off" or "full on" mode with this circuit, regulation is no 0-100% but only 2-98% or so. However it's enough for me.
+
+It's a good circuit for dimming simple resistive loads: lamps, soldering irons, electric ovens and irons. It's problematic to use it with other load types, like brush DC motors if supply voltage is higher than they intended to work with. With this circuit, amplitude voltage even at 2% will be as high as supply voltage and it can end bad for things like diodes.
+
+This circuit works fine with flyback SMPS connected to it (but I did not tested other SMPS types).
+
+Notes about layout file:
+
+* The layout is intended for use with KA1H0165R flyback IC, but LTSpice shows conventional UC384x standby circuit. This is because there is no KA1H0165R simulation model available, so I just built an UC3843 one because the work principle is same.
+
+Notes about circuit:
+
+* Any 400V MOSFET can be used in this circuit.
+* The standby SMPS and NE555 share common ground to drive MOSFET.
+* There is no protection from wrong polarity. However, in real circuit, I added a diode at the circuit entry, so current cannot go in reverse in case there is wrong polarity.
