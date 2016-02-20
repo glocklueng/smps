@@ -1,0 +1,20 @@
+UC3843 and compatibles small flyback SMPS for powers up to 50W. Efficiency: <= 82%.
+
+This supply is not intended for heavy loads. It serves well when used as a standby supply for
+onboard ICs, fans and leds in other power projects. But it can be used as a small charger or
+supply for a big power high voltage series LED. It depends on your task.
+
+Measured ripple voltage at 5V 2.8A: ~100mV. Not very nice, but acceptable.
+
+There was a bigger version attempt. I did not even calculated it well. It now can serve up to 110W at 24V, and has a good output diode. Ripple voltage on it is bigger. I use it as a bulk supply for my other projects because it confirmed to be rock stable.
+
+Use flyback.c in my etech repository for calculating power transformer for this circuit: http://lynxlynx.tk/cgit/cgit.cgi/etech/tree/flyback.c
+Use resdiv.c from same repository to calculate resistor divider for TL431 voltage sensing device.
+Use freq384x.c from same repository to calculate UC3843 frequency.
+
+Notes on LTSpice circuit:
+
+* Any >=650V with sufficient current and Rds(on) MOSFET can be used
+* Diode in snubber is actually a FR107 slow-fast(TM) type
+
+Home page for first bigger 110W version: http://lynxlynx.tk/etech/lynx_flyback/ (sorry, only Russian version)
