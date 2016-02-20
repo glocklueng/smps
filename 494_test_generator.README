@@ -1,0 +1,7 @@
+494_test_generator - a generator of alternating square wave voltage and current.
+
+Useful when debugging a GDT (gate drive transformer) with oscilloscope, as well as an 60Hz-300kHz two channel signal generator with adjustable duty cycle.
+
+Some oscilloscope screenshots are included for 60Hz and 30kHz. The supply voltage was 12V.
+
+Combining it with IR2110 full bridge gives a powerful ferrite transformer tester!
