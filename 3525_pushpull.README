@@ -1,0 +1,10 @@
+This circuit is a step-up push-pull rated at 10-14VDC input and 350VDC output.
+Ideal power capacity is about 1kW, real one is just under 700W. Efficiency <= 94%.
+
+Notes about LTSpice circuit:
+
+* Input diode to SG3525 is really an UF4007
+* 0.0001R resistors from supply to ground are simulated trace resistance
+* Snubber diode is really a FR207
+
+Home page: http://lynxlynx.tk/eng/lynx_dcdc_3525/ contains verbose description of schematic as well as efficiency calculations.
