@@ -6,8 +6,9 @@ that will power their homes, worksites and many many places which require stable
 There mostly a step-up things (i.e. power projects which convert battery supply voltage into usable
 high voltage), but some are step-down power supplies.
 
-Schematics here are usually simulations that should be run from LTSpice. Some virtual parts are
-to be obtained elsewhere, because I have no rights to redistribute them in this repository.
+Schematics here (*.asc) are usually simulations that should be run from LTSpice. Some virtual parts are to be obtained elsewhere, because I have no rights to redistribute them in this repository.
+
+*.lay layout files can be viewed with viewlayout.exe which is part of Sprint Layout 5.
 
 The parts you can obtain are from:
 
