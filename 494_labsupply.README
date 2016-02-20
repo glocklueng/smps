@@ -1,0 +1,11 @@
+TL494 lab test supply - up to 55VDC 16A output (designed).
+
+I need to make it work before I will get to any of my big converters. Because I need a separate isolated "virtual 36V battery" with adjustable voltage down to 24VDC and up to 50VDC.
+
+Previous version did used GDT as MOSFET driver. Unfortunately last measures taken from real GDT proven that all my GDT cores are too weak or designed incorrectly and they cannot provide sufficient hard rise times, and MOSFETs will heat up. While this may be cured by half by using PNP discharge circuit, the slow rise time of about 500nS at 50kHz is still unacceptable, and with GDT experiments I did earlier it was proven that making and installing GDT can be very tricky. So later I ruled out GDT option.
+
+Primary and secondary sides are fully separate, so secondary is floating supply like the battery (if adequate isolation was used). Feedback is done via optocoupler. Because feedback circuit uses traditional TL431 IC and it's max. voltage is only 36VDC, alternative supply is created by dropping some voltage on BD139 darlington pair. Feedback current will not heat up them too much because it's low (even at 27.5VDC (55/2) 20mA wasted power is about a watt, and feedback triggers early much before that).
+
+The standby supply in simulation is replaced with 16VDC ideal source, because of multiple grounds on circuit. In reality, it will be a standard UC384x mini flyback SMPS. I probably will add it later when I will refine circuit again.
+
+*** This circuit is a draft. It was not tested in reality. ***
