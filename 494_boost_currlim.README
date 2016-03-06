@@ -5,6 +5,7 @@ This is a lame booster I made in software at some day, and later - real hardware
 - If the current is less than 500mA, it will keep 30V steady voltage
 - If load sinks more than 500mA, the voltage monitoring is off, and current is monitored constantly at 500mA level.
 
-This circuit forces TL494 to do both voltage and current monitoring. This is achi
+This circuit forces TL494 to do both voltage and current monitoring. This is achieved by "weighting" the feedback of both error amplifiers. Both error amplifiers are filtered with RC circuits to cut off 100kHz switching.
 
 Measured efficiency is about 90%: at 12,6Vin @ 1.31A out is clean 30V 0.5A with IRL3705N MOSFET.
+Working input range is 9-18VDC. To filter output, place a small inductor between two caps.
