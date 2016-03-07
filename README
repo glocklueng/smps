@@ -10,6 +10,8 @@ Schematics here (*.asc) are usually simulations that should be run from LTSpice.
 
 *.lay layout files can be viewed with viewlayout.exe which is part of Sprint Layout 5.
 
+Images are in PNG format. Some of them are complete circuit diagrams. They are given only for 100% real world successfully tested things, and usually a PCB layout is included with them too.
+
 The parts you can obtain are from:
 
 * http://valvolodin.narod.ru/models.html - archives ValVol.zip, parts of Standard.zip, spice.zip, extra.rar, extra_n.rar.
