@@ -13,3 +13,4 @@ Circuit characteristics:
 - Working input range is 9-18VDC. To filter output, place a small inductor between two caps. Tested to 20VDC if 18V Zener is installed on MOSFET from gate to source (included on circuit).
 - Included PCB is for max. 60W of operation. Circuit scales well, but non transformer nature limits it's power capacity. This circuit is just a education on how to regulate both voltage and current smoothly with TL494. Still good enough for things like small LED drivers, 12-19V for notebooks etc. Just order good coils because sourcing them is difficult.
 - I do not think gapless inductor is possible here. So do not expect more than 90% efficiency.
+- To make it work from as low as a 5VDC source, you need to use logic level FET. Mine already use it, and I tested and it works pretty well from 5.5V (3-3.5V at gate), but sags at 5V as FET enters linear region (2.5V at gate). Definitely some losses you will need to overcome if you want 5VDC operation.
