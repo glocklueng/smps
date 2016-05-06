@@ -1,0 +1,30 @@
+Step Up-Down (SEPIC) based on TL494 chip converter with current limit.
+
+This one is based on 494_boost_currlim, also represented here. This one just replaces pure boost
+circuit with SEPIC circuit consisting of additional series capacitor and parallel inductor of
+same value. It proven works with two cheap chinese inductors, although somewhere it produces
+freaky noises. Probably needs playing with frequency and feedback which I did not have time for.
+
+Otherwise it works and produces voltage in range of about 3-38V and it can work from voltages
+within limits for TL494 and working MOSFET. As previously I've chosen IRL3705N which works nice
+even if driven down even to 5,5VDC source but, unfortunately, not less.
+
+An old Nikon camera requiring only 4,2V starts up with this one fine. My traditional flybacks
+are unable to put it on due to slow restarting of UC3843 which resets camera state.
+
+This one uses BD139/BD140 drive totem pole pair but unfortunately rise and fall times did not
+improved at all, so if you're driving only one not-so-heavy FET then you can put here even
+BC547/BC557 which worked nice and continue to in my previous booster circuit. Cut-off voltage
+still at 5,5V so even this parameter is not improved. In case of multiple FETs in parallel
+you must use BDs however.
+
+This one is a candidate for a auxiliary PSU for use with 36-50VDC source when making a large
+2500W converter powered from three series connected lead acid batteries = 36-44V. It's version
+is stored here under 494_sepic_aux names.
+
+Finally, this version is very noisy. I did not put output inductors or film capacitors. The spike
+at output reaches 3V pk-pk but since it drives a HVLED, I don't care. As an aux, it's required
+to filter output. Also, high noise is only when the load reaches certain thresold so I assume
+something is not good with my poor salvaged weak 100u inductors.
+
+06May2016.
