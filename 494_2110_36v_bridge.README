@@ -11,7 +11,7 @@ Input:
 
 Standby supply:
 
-- runs from 27 to 44VDC, monitors for possible over- and undervoltages at input
+- runs from 27 to 44VDC,
 - provides stable 16VDC supply for onboard circuitry as well as for fans (maybe it will be two voltage version with 12VDC for fans).
 
 Generator stage:
@@ -21,6 +21,7 @@ Generator stage:
 - Soft start stage limits hard load on bridge because there is no output inductor installed
 - Equipped with protection against overcurrent on secondary side, which temporarily is turned off during startup
 - Emits hard signals for drivers with signal transistors configured in totem-pole stage
+- Monitors input voltage and halts when overvoltage or undervoltage occured
 
 Driver stage:
 
